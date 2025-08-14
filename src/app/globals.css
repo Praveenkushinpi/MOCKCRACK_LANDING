@@ -367,7 +367,7 @@
 }
 
 .backgroundImage {
-  background-image: url('/images/a.jpg');
+  background-image: url('https://images.pexels.com/photos/326235/pexels-photo-326235.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
