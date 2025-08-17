@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="mb-8 md:mb-0">
           <h2 className="text-2xl font-bold text-white mb-2">MockCrack</h2>
           <p className="text-gray-400 max-w-xs">
-            Your ultimate platform for secure code sharing, learning, and collaboration.
+MockCrack  The ultimate AI-powered exam prep platform.
           </p>
         </div>
 

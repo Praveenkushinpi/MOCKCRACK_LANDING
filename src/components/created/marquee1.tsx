@@ -71,26 +71,40 @@ const ReviewCard = ({
   body: string;
 }) => {
   return (
-    <figure
-      className={cn(
-        "relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
-        // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-      )}
-    >
-      <div className="flex flex-row items-center gap-2">
-        <Image className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
-    </figure>
+<figure
+  className={cn(
+    "relative h-full w-72 cursor-pointer overflow-hidden rounded-2xl border p-5 shadow-md transition-all duration-300",
+    // light styles
+    "border-gray-200 bg-white hover:shadow-lg",
+    // dark styles
+    "dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-800"
+  )}
+>
+  {/* Header: Avatar + Name */}
+  <div className="flex flex-row items-center gap-3">
+    <Image
+      className="rounded-full ring-2 ring-gray-200 dark:ring-gray-700"
+      width="40"
+      height="40"
+      alt=""
+      src={img}
+    />
+    <div className="flex flex-col">
+      <figcaption className="text-sm font-semibold text-gray-900 dark:text-white">
+        {name}
+      </figcaption>
+      <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
+        {username}
+      </p>
+    </div>
+  </div>
+
+  {/* Quote body */}
+  <blockquote className="mt-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+    {body}
+  </blockquote>
+</figure>
+
   );
 };
 
@@ -99,11 +113,6 @@ export function Marquee1() {
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
-          <ReviewCard key={review.name} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
