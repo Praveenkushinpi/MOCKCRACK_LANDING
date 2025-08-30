@@ -29,6 +29,8 @@ export default function Home() {
 <section className="relative h-screen w-full overflow-hidden">
   {/* Background image */}
   <Image
+    width={1920}
+  height={1080}
     src="/images/pexels-photo-326235.jpeg"
     alt="Beautiful landscape background"
     fill
