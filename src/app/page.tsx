@@ -71,7 +71,7 @@ export default function Home() {
 
         {/* CTAs */}
         <div className="mt-5 sm:mt-6 lg:mt-8 flex items-center gap-3">
-          <Link href="/signup" className="inline-block">
+          <Link href="/" className="inline-block">
             <button
               type="button"
               className="
@@ -90,7 +90,7 @@ export default function Home() {
             </button>
           </Link>
 
-          <Link href="/demo" className="inline-block">
+          <Link href="/" className="inline-block">
             <button
               type="button"
               className="
