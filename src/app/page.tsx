@@ -136,7 +136,8 @@ export default function Home() {
       <section className="w-full max-w-7xl mx-auto px-6 my-16 relative">
         {/* Floating Image (absolute, no layout shift) */}
 <Image
-fill
+height={100}
+width={100}
   src="/icons/features-image.png"
   alt="Features Illustration"
   className="
@@ -153,7 +154,8 @@ fill
 />
 
 <Image
-fill
+height={100}
+width={100}
   src="/icons/features-imagea.png"
   alt="Features Illustration"
   className="
@@ -169,7 +171,8 @@ fill
   "
 />
 <Image
-fill
+height={100}
+width={100}
   src="/icons/features-imageap.png"
   alt="Features Illustration"
   className="
@@ -594,7 +597,8 @@ fill
               </Highlighter>
             </h2>
     <Image
-fill
+height={100}
+width={100}
   src="/icons/howitworks.png"
   alt="Features Illustration"
   className="
