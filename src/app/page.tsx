@@ -29,7 +29,7 @@ export default function Home() {
 <section className="relative h-screen w-full overflow-hidden">
   {/* Background image */}
   <Image
-    src="/images/pexels-photo-326235.jpeg"
+    src="/images/pexels-photo-326235.png"
     alt="Beautiful landscape background"
     fill
     priority
