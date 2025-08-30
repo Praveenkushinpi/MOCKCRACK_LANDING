@@ -1,6 +1,4 @@
 "use client";
-
-import Navbar from "@/components/navBar";
 import { Marquee1 } from "@/components/created/marquee1";
 import Link from "next/link";
 import { NumberTicker } from "@/components/magicui/number-ticker";
@@ -21,52 +19,62 @@ import FloatingFormulas from "@/components/created/formula";
 import Footer from "@/components/footer";
 import { StickyBanner } from "@/components/ui/sticky-banner";
 import NavbarDemo from "@/components/navBar";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-cream-100 dark:bg-gray-900">
       <StickyBanner />
       <NavbarDemo/>
-      <section className="relative overflow-hidden backgroundImage">
-        {/* Background stays */}
-        <div className="absolute inset-0 -z-10"></div>
+<section className="relative h-screen w-full overflow-hidden">
+  {/* Background image */}
+  <Image
+    src="/images/pexels-photo-326235.jpeg"
+    alt="Beautiful landscape background"
+    fill
+    priority
+    className="object-cover object-center z-0" // Pushes background behind everything
+  />
 
-        <div className="mx-auto w-full px-6 sm:px-12 lg:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 py-20 sm:py-28 lg:py-36">
-            <div className="flex flex-col items-start justify-center">
-              <h1
-                className="
+  {/* Optional overlay (gradient/dark filter) */}
+  <div className="absolute inset-0 bg-black/30 -z-5"></div>
+
+  {/* Foreground content */}
+  <div className="relative z-10 mx-auto w-full px-6 sm:px-12 lg:px-24">
+    <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 py-20 sm:py-28 lg:py-36">
+      {/* Left: Text */}
+      <div className="flex flex-col items-start justify-center">
+        <h1
+          className="
             text-4xl sm:text-5xl md:text-6xl lg:text-8xl
             font-bold text-pastel-blue-200
             leading-[1.08] sm:leading-[1.06] lg:leading-[1.04]
             tracking-tight
             max-w-[18ch]
           "
-              >
-                <span className="block">AI that help you,</span>
-                <span className="block">Ace your exam.</span>
-              </h1>
+        >
+          <span className="block">AI that helps you,</span>
+          <span className="block">Ace your exam.</span>
+        </h1>
 
-              {/* Subheading */}
-              <p
-                className="
+        {/* Subheading */}
+        <p
+          className="
             mt-4 sm:mt-5 lg:mt-6
             text-base sm:text-lg md:text-xl
             text-pastel-blue-100 dark:text-gray-300
             max-w-[52ch] leading-relaxed
           "
-              >
-                One place to get answers, ace your tests, and crack every exam
-                with the help of AI.
-              </p>
+        >
+          One place to get answers, ace your tests, and crack every exam with the help of AI.
+        </p>
 
-              {/* CTAs */}
-              <div className="mt-5 sm:mt-6 lg:mt-8 flex items-center gap-3">
-                {/* Primary */}
-                <Link href="/signup" className="inline-block">
-                  <button
-                    type="button"
-                    className="
+        {/* CTAs */}
+        <div className="mt-5 sm:mt-6 lg:mt-8 flex items-center gap-3">
+          <Link href="/signup" className="inline-block">
+            <button
+              type="button"
+              className="
                 inline-flex items-center justify-center
                 rounded-md
                 px-10 py-3
@@ -77,16 +85,15 @@ export default function Home() {
                 hover:bg-pastel-blue-500 active:opacity-90
                 focus:outline-none focus:ring-2 focus:ring-accent-info focus:ring-offset-2
               "
-                  >
-                    Start Now
-                  </button>
-                </Link>
+            >
+              Start Now
+            </button>
+          </Link>
 
-                {/* Secondary */}
-                <Link href="/demo" className="inline-block">
-                  <button
-                    type="button"
-                    className="
+          <Link href="/demo" className="inline-block">
+            <button
+              type="button"
+              className="
                 inline-flex items-center justify-center
                 rounded-md
                 px-10 py-3
@@ -99,35 +106,38 @@ export default function Home() {
                 active:opacity-90
                 focus:outline-none focus:ring-2 focus:ring-accent-info/40 focus:ring-offset-2
               "
-                  >
-                    Start Demo
-                  </button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Right side: Hero image */}
-            <div className="flex justify-center lg:justify-end">
-<img
-  src="/icons/hero-imagea.png"
-  alt="Student mascot on mountain"
-  className="
-    w-[90%] max-w-sm 
-    sm:max-w-md sm:scale-110 sm:translate-x-0 sm:translate-y-4
-    md:max-w-lg md:scale-125 md:-translate-x-24 md:translate-y-6
-    lg:max-w-xl lg:scale-150 lg:-translate-x-50 lg:translate-y-30
-    drop-shadow-lg
-  "
-/>
-
-            </div>
-          </div>
+            >
+              Start Demo
+            </button>
+          </Link>
         </div>
-      </section>
+      </div>
+
+      {/* Right side: Hero mascot */}
+      <div className="flex justify-center lg:justify-end">
+        <Image
+          height={500}
+          width={500}
+          src="/icons/hero-imagea.png"
+          alt="Student mascot on mountain"
+          className="
+            w-[90%] max-w-sm 
+            sm:max-w-md sm:scale-110 sm:translate-x-0 sm:translate-y-4
+            md:max-w-lg md:scale-125 md:-translate-x-24 md:translate-y-6
+            lg:max-w-xl lg:scale-150 lg:-translate-x-50 lg:translate-y-30
+            drop-shadow-lg
+          "
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="w-full max-w-7xl mx-auto px-6 my-16 relative">
         {/* Floating Image (absolute, no layout shift) */}
-<img
+<Image
+height={100}
+width={100}
   src="/icons/features-image.png"
   alt="Features Illustration"
   className="
@@ -139,11 +149,13 @@ export default function Home() {
     lg:max-w-xl lg:scale-150 lg:-translate-x-160 lg:translate-y-30
     transform -translate-x-1/2
     drop-shadow-2xl pointer-events-none
-    hidden md:block
+    hidden md:lg:block
   "
 />
 
-<img
+<Image
+height={100}
+width={100}
   src="/icons/features-imagea.png"
   alt="Features Illustration"
   className="
@@ -155,10 +167,12 @@ export default function Home() {
     md:max-w-lg md:scale-125 md:-translate-x-12 md:translate-y-6
     lg:max-w-xl lg:scale-150 lg:-translate-x-20 lg:translate-y-12
     xl:max-w-xl xl:scale-100 xl:translate-x-[430px] xl:translate-y-[950px]
-    hidden md:block
+    hidden md:lg:block
   "
 />
-<img
+<Image
+height={100}
+width={100}
   src="/icons/features-imageap.png"
   alt="Features Illustration"
   className="
@@ -170,7 +184,7 @@ export default function Home() {
     md:max-w-lg md:scale-125 md:-translate-x-12 md:translate-y-6
     lg:max-w-xl lg:scale-150 lg:-translate-x-20 lg:translate-y-12
     xl:max-w-xl xl:scale-50 xl:translate-x-[-1040px] xl:translate-y-[1400px]
-    hidden md:block
+    hidden md:lg:block
   "
 />
 
@@ -236,8 +250,10 @@ export default function Home() {
 
                 {/* Screenshot Placeholder */}
                 <div className="relative h-64 lg:h-80 bg-white rounded-2xl shadow-inner border-2 border-dashed border-red-300 flex items-center justify-center mb-4">
-                  <img
-                    src="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg" // <-- replace with your image path
+                 <Image
+                    height={100}
+                    width={100}
+                    src="/images/sea.png"
                     alt="AI Notes Screenshot"
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -266,8 +282,10 @@ export default function Home() {
 
                 {/* Screenshot Placeholder */}
                 <div className="relative h-64 lg:h-80 bg-white rounded-2xl shadow-inner border-2 border-dashed border-blue-300 flex items-center justify-center mb-4">
-                  <img
-                    src="https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg" // <-- replace with your image path
+                  <Image
+                    height={100}
+                    width={100}
+                    src="/images/sea.png" // <-- replace with your image path
                     alt="AI Notes Screenshot"
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -310,8 +328,10 @@ export default function Home() {
 
                   {/* Analytics Screenshot Placeholder */}
                   <div className="relative h-96 lg:h-[28rem] bg-white rounded-2xl shadow-inner border-2 border-dashed border-yellow-300 flex items-center justify-center">
-                    <img
-                      src="https://images.pexels.com/photos/1659438/pexels-photo-1659438.jpeg" // <-- replace with your image path
+                   <Image
+                    height={100}
+                    width={100}
+                      src="/images/sea.png" // <-- replace with your image path
                       alt="AI Notes Screenshot"
                       className="w-full h-full object-cover rounded-xl"
                     />
@@ -342,15 +362,19 @@ export default function Home() {
 
                   {/* Timer Screenshot Placeholder */}
                   <div className="bg-purple-50 rounded-xl p-6 mb-6 border-2 border-dashed border-purple-300 flex items-center justify-center h-40">
-                    <img
-                      src="https://images.pexels.com/photos/906150/pexels-photo-906150.jpeg" // <-- replace with your image path
+                   <Image
+                    height={100}
+                    width={100}
+                      src="/images/sea.png" // <-- replace with your image path
                       alt="AI Notes Screenshot"
                       className="w-full h-full object-cover rounded-xl"
                     />
                   </div>
                   <div className="bg-purple-50 rounded-xl p-6 mb-6 border-2 border-dashed border-purple-300 flex items-center justify-center h-40">
-                    <img
-                      src="https://images.pexels.com/photos/906150/pexels-photo-906150.jpeg" // <-- replace with your image path
+                    <Image
+                    height={100}
+                    width={100}
+                      src="/images/sea.png" // <-- replace with your image path
                       alt="AI Notes Screenshot"
                       className="w-full h-full object-cover rounded-xl"
                     />
@@ -392,8 +416,10 @@ export default function Home() {
 
                 {/* Achievement Screenshot Placeholder */}
                 <div className="relative h-80 bg-white rounded-2xl shadow-inner border-2 border-dashed border-pink-300 flex items-center justify-center">
-                  <img
-                    src="https://images.pexels.com/photos/250591/pexels-photo-250591.jpeg" // <-- replace with your image path
+                  <Image
+                    height={100}
+                    width={100}
+                    src="/images/sea.png" // <-- replace with your image path
                     alt="AI Notes Screenshot"
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -424,8 +450,10 @@ export default function Home() {
 
                 {/* Multi-device Screenshot Placeholder */}
                 <div className="relative h-80 bg-white rounded-2xl shadow-inner border-2 border-dashed border-indigo-300 flex items-center justify-center">
-                  <img
-                    src="https://images.pexels.com/photos/158063/bellingrath-gardens-alabama-landscape-scenic-158063.jpeg" // <-- replace with your image path
+                  <Image
+                    height={100}
+                    width={100}
+                    src="/images/sea.png" // <-- replace with your image path
                     alt="AI Notes Screenshot"
                     className="w-full h-full object-cover rounded-xl"
                   />
@@ -513,7 +541,7 @@ export default function Home() {
 <div className="w-full rounded-2xl overflow-hidden shadow-lg">
   <iframe
     className="w-full aspect-video"
-    src="https://www.youtube.com/embed/e8nsIPZvzH8?si=CaGyJQ5bHnpzrHa&autoplay=1&mute=1"
+    src="images/sea.png"
     title="MockCrack Features Demo"
     frameBorder="0"
     allow="autoplay; encrypted-media"
@@ -568,7 +596,9 @@ export default function Home() {
                 How It Works
               </Highlighter>
             </h2>
-        <img
+    <Image
+height={100}
+width={100}
   src="/icons/howitworks.png"
   alt="Features Illustration"
   className="
@@ -616,7 +646,7 @@ export default function Home() {
 <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-inner bg-gray-900">
   <iframe
     className="absolute top-0 left-0 w-full h-full rounded-2xl"
-    src="https://www.youtube.com/embed/e8nsIPZvzH8?si=CaGyJQ5bHnpzrHa&autoplay=1&mute=1"
+    src="images/sea.png"
     title="How MockCrack Works - Complete Demo"
     frameBorder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

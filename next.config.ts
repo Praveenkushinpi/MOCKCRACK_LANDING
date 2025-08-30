@@ -1,10 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  images: {
-    domains: ['avatar.vercel.sh'],
-  },
-};
-
-
-export default nextConfig;
+/** @type {import('next').NextConfig} */
+const nextConfig = {}
+ 
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
+ 
+module.exports = withBundleAnalyzer(nextConfig)

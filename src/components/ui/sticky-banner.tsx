@@ -37,7 +37,7 @@ export const StickyBanner = ({
     {/* Centered Text */}
     <p className="text-white text-xl md:text-2xl font-semibold drop-shadow-md text-center">
       ⏳ Limited time: Get free credits before they’re gone!{" "}
-      <a href="signin" className="underline hover:text-gray-100 transition">
+      <a href="https://www.youtube.com" className="underline hover:text-gray-100 transition">
         Claim Now
       </a>
     </p>
