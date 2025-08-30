@@ -29,8 +29,6 @@ export default function Home() {
 <section className="relative h-screen w-full overflow-hidden">
   {/* Background image */}
   <Image
-    width={1920}
-  height={1080}
     src="/images/pexels-photo-326235.jpeg"
     alt="Beautiful landscape background"
     fill
@@ -138,8 +136,7 @@ export default function Home() {
       <section className="w-full max-w-7xl mx-auto px-6 my-16 relative">
         {/* Floating Image (absolute, no layout shift) */}
 <Image
-height={100}
-width={100}
+fill
   src="/icons/features-image.png"
   alt="Features Illustration"
   className="
@@ -156,8 +153,7 @@ width={100}
 />
 
 <Image
-height={100}
-width={100}
+fill
   src="/icons/features-imagea.png"
   alt="Features Illustration"
   className="
@@ -173,8 +169,7 @@ width={100}
   "
 />
 <Image
-height={100}
-width={100}
+fill
   src="/icons/features-imageap.png"
   alt="Features Illustration"
   className="
@@ -599,8 +594,7 @@ width={100}
               </Highlighter>
             </h2>
     <Image
-height={100}
-width={100}
+fill
   src="/icons/howitworks.png"
   alt="Features Illustration"
   className="
